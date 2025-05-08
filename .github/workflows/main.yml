@@ -22,11 +22,11 @@ jobs:
     - name: Run Bandit Scan
       run: bandit -ii -ll -r . -f json -o bandit-report.json
 
-    - name: upload artefact
-      uses: actions/upload-artefact@v4
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v4
       if: always()
-      with: 
-       name: bandit findings
-       path: bandit-report.json
+      with:
+        name: bandit-findings
+        path: bandit-report.json
        
      
